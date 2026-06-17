@@ -265,8 +265,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* Características (merged into Proyecto) */
 .caracteristicas-block {
-  margin-top: 64px;
-  padding-top: 48px;
+  margin-top: 96px;
+  padding-top: 64px;
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 .caracteristicas-block h3 {
