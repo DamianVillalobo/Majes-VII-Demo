@@ -152,10 +152,30 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   position: relative;
   min-height: 92vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   color: #fff;
   overflow: hidden;
 }
+.hero-content-center {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.hero-content-center .eyebrow {
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+.hero-content-center .hero-address {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.hero-content-center .hero-cta { justify-content: center; }
 .hero-media {
   position: absolute;
   inset: 0;
