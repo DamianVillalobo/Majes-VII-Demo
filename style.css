@@ -7,7 +7,7 @@
   --accent-dark: #262626;
   --whatsapp: #25d366;
   --whatsapp-dark: #1ebd5a;
-  --progress: #2563eb;
+  --progress: #0d0d0d;
   --radius: 4px;
   --max-width: 1180px;
   --font-display: 'Cormorant Garamond', serif;
@@ -305,12 +305,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .avance-track {
   fill: none;
   stroke: rgba(0,0,0,0.08);
-  stroke-width: 10;
+  stroke-width: 16;
 }
 .avance-progress {
   fill: none;
   stroke: var(--progress);
-  stroke-width: 10;
+  stroke-width: 16;
   stroke-linecap: round;
 }
 .avance-percent {
