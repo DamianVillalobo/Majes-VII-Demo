@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Majes VII | Edificio en construcción en zona Güemes - Mar del Plata</title>
-<meta name="description" content="Majes VII - Pisos de 4 ambientes con cochera en construcción, zona Güemes, Mar del Plata. Lamadrid 2940. Entrega estimada junio 2027.">
+<meta name="description" content="Majes VII - Pisos de 4 ambientes con cochera en construcción, zona Güemes, Mar del Plata. Lamadrid 2940. Entrega estimada marzo 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -62,7 +62,7 @@
         <p>Ubicados en una de las zonas más buscadas de la ciudad, con acceso a comercios, restaurantes y servicios, estos pisos representan una gran oportunidad de inversión o vivienda permanente.</p>
         <div class="entrega-badge">
           <span class="entrega-label">Entrega estimada</span>
-          <span class="entrega-fecha">Junio 2027</span>
+          <span class="entrega-fecha">Marzo 2027</span>
         </div>
       </div>
       <ul class="feature-list">
@@ -169,22 +169,35 @@
   <div class="container">
     <p class="section-tag">Galería</p>
     <h2>Renders del proyecto</h2>
-    <div class="gallery">
-      <button class="gallery-item" data-full="exterior.jpg">
-        <img src="exterior.jpg" alt="Render exterior del edificio" loading="lazy">
-      </button>
-      <button class="gallery-item" data-full="interior-living.jpg">
-        <img src="interior-living.jpg" alt="Render living comedor" loading="lazy">
-      </button>
-      <button class="gallery-item" data-full="interior-dormitorio.jpg">
-        <img src="interior-dormitorio.jpg" alt="Render dormitorio" loading="lazy">
-      </button>
-      <button class="gallery-item" data-full="interior-comedor.jpg">
-        <img src="interior-comedor.jpg" alt="Render comedor" loading="lazy">
-      </button>
-      <button class="gallery-item" data-full="interior-vestidor.jpg">
-        <img src="interior-vestidor.jpg" alt="Render vestidor y baño en suite" loading="lazy">
-      </button>
+    <div class="carousel" id="rendersCarousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <div class="carousel-slide" data-full="exterior.jpg">
+            <img src="exterior.jpg" alt="Render exterior del edificio" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-full="interior-living.jpg">
+            <img src="interior-living.jpg" alt="Render living comedor" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-full="interior-dormitorio.jpg">
+            <img src="interior-dormitorio.jpg" alt="Render dormitorio" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-full="interior-comedor.jpg">
+            <img src="interior-comedor.jpg" alt="Render comedor" loading="lazy">
+          </div>
+          <div class="carousel-slide" data-full="interior-vestidor.jpg">
+            <img src="interior-vestidor.jpg" alt="Render vestidor y baño en suite" loading="lazy">
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-prev" aria-label="Anterior">‹</button>
+        <button class="carousel-arrow carousel-next" aria-label="Siguiente">›</button>
+      </div>
+      <div class="carousel-thumbs">
+        <button class="carousel-thumb is-active" data-index="0"><img src="exterior.jpg" alt="" loading="lazy"></button>
+        <button class="carousel-thumb" data-index="1"><img src="interior-living.jpg" alt="" loading="lazy"></button>
+        <button class="carousel-thumb" data-index="2"><img src="interior-dormitorio.jpg" alt="" loading="lazy"></button>
+        <button class="carousel-thumb" data-index="3"><img src="interior-comedor.jpg" alt="" loading="lazy"></button>
+        <button class="carousel-thumb" data-index="4"><img src="interior-vestidor.jpg" alt="" loading="lazy"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -212,11 +225,21 @@
 <section class="section" id="plano">
   <div class="container">
     <p class="section-tag">Plantas</p>
-    <h2>Plano de planta</h2>
-    <p class="plano-caption">Planta tipo · Pisos 1° a 6°</p>
-    <button class="plano-frame" data-full="planta-tipo-pisos-1-6.jpg">
-      <img src="planta-tipo-pisos-1-6.jpg" alt="Plano de planta tipo, pisos 1 a 6, edificio Majes VII">
-    </button>
+    <h2>Planos de planta</h2>
+    <div class="planos-grid">
+      <div class="plano-item">
+        <p class="plano-caption">Planta baja</p>
+        <button class="plano-frame" data-full="planta-baja.jpg">
+          <img src="planta-baja.jpg" alt="Plano de planta baja, edificio Majes VII">
+        </button>
+      </div>
+      <div class="plano-item">
+        <p class="plano-caption">Planta tipo · Pisos 1° a 6°</p>
+        <button class="plano-frame" data-full="planta-tipo-pisos-1-6.jpg">
+          <img src="planta-tipo-pisos-1-6.jpg" alt="Plano de planta tipo, pisos 1 a 6, edificio Majes VII">
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
