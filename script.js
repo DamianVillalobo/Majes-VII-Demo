@@ -1,6 +1,60 @@
 // Año en footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Hero: expansión de la foto con el scroll (sin bloquear el scroll normal)
+(function () {
+  const wrap = document.getElementById('heroScrollWrap');
+  const frame = document.getElementById('heroMediaFrame');
+  const content = document.getElementById('heroContent');
+  if (!wrap || !frame || !content) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return; // CSS ya deja el frame a pantalla completa, sin animar
+
+  const isMobile = () => window.innerWidth <= 700;
+
+  function getStartSize() {
+    return isMobile()
+      ? { w: 86, wUnit: 'vw', h: 42, hUnit: 'vh', radius: 20 }
+      : { w: 74, wUnit: 'vw', h: 58, hUnit: 'vh', radius: 28 };
+  }
+
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const scrollableDist = wrap.offsetHeight - window.innerHeight;
+    const scrolled = -wrap.getBoundingClientRect().top;
+    let progress = scrollableDist > 0 ? scrolled / scrollableDist : 1;
+    progress = Math.min(1, Math.max(0, progress));
+
+    const start = getStartSize();
+    const width = start.w + (100 - start.w) * progress;
+    const height = start.h + (100 - start.h) * progress;
+    const radius = start.radius * (1 - progress);
+    const shadow = 0.5 * (1 - progress);
+
+    frame.style.width = `${width}${start.wUnit}`;
+    frame.style.height = `${height}${start.hUnit}`;
+    frame.style.borderRadius = `${radius}px`;
+    frame.style.boxShadow = `0 40px 90px rgba(0,0,0,${shadow.toFixed(2)})`;
+
+    content.style.opacity = `${0.92 + 0.08 * progress}`;
+    content.style.transform = `translateY(${(1 - progress) * 6}px)`;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+
 // Avance de obra (círculos de progreso, datos en avance-obra.js)
 if (typeof avanceObra !== 'undefined') {
   const RADIUS = 60;
